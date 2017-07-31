@@ -7,3 +7,11 @@ export CROSS_COMPILE=aarch64-linux-gnu-
 make zombie_defconfig |& tee log_generic.txt
 make -j$(grep -c ^processor /proc/cpuinfo) |& tee -a log_generic.txt
 
+if [ -f arch/arm64/boot/Image.gz ]
+then
+        rm -f ../final_files/boot.img
+        rm -f ../final_files/kernel/kernel
+        cp arch/arm64/boot/Image.gz ../final_files/kernel/kernel
+        cd ../final_files
+        ./mkboot kernel boot.img
+fi
