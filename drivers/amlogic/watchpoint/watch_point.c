@@ -858,7 +858,7 @@ static struct class watch_point_class = {
 	.class_attrs = watch_point_attr,
 };
 
-static int aml_watch_point_probe(struct platform_device *pdev)
+static int __ref aml_watch_point_probe(struct platform_device *pdev)
 {
 	int r;
 

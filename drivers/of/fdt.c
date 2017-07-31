@@ -683,7 +683,7 @@ static inline void early_init_dt_check_for_initrd(unsigned long node)
 #include <linux/version.h>
 
 int is_instabooting;
-void early_init_dt_check_for_instaboot(unsigned long node)
+void __init early_init_dt_check_for_instaboot(unsigned long node)
 {
 	unsigned long version_code;
 	int len;
