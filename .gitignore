@@ -98,4 +98,5 @@ all.config
 
 # customer folder
 customer
+log_generic.txt
 
