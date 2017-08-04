@@ -1,15 +1,20 @@
 comment "Qualcomm Atheros Prima WLAN module"
 
-config PRIMA_WLAN
+config QCA_CLD_WLAN
+	tristate ""
+	depends on WLAN && CFG80211
+	default y
 
+config PRIMA_WLAN
 	tristate "Qualcomm Atheros Prima WLAN module"
+	depends on QCA_CLD_WLAN
 	default n
 	help
 	Add support for the Qualcomm Atheros Prima WLAN module
 
 config PRONTO_WLAN
-
 	tristate "Qualcomm Atheros Pronto WLAN module"
+	depends on QCA_CLD_WLAN
 	default n
 	help
 	Add support for the Qualcomm Atheros Pronto WLAN module
